@@ -1,0 +1,39 @@
+<nav class="nav flex-column">
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link navmanu-style {{active}}" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link navmanu-style" href="{% url 'home' %}">Product</a>
+        <li class="nav-item">
+            <a class="nav-link navmanu-style pl-5" href="{% url 'grocery' %}">Grocery</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link navmanu-style pl-5" href="{% url 'antiseptic' %}">Antiseptic</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link navmanu-style pl-5" href="{% url 'shoes' %}">Shoes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link navmanu-style pl-5" href="{% url 'bags' %}">Bags</a>
+        </li>
+        </li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link navmanu-style m-0 text-capitalize font-weight-bold text-white"
+                href="{% url 'profile' %}">User : {{user}}</a>
+        </li>
+
+        <li class=" nav-item">
+            <a class="nav-link navmanu-style" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link navmanu-style" href="{% url 'login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link navmanu-style" href="{% url 'signup' %}">Singup</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>

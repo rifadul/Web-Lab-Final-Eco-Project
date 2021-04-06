@@ -1,0 +1,31 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block title %}Bags{% endblock title %}
+{% block main-content %}
+
+<div class="container">
+    <!-- <div class="banner">
+        <img src="{% static 'product/images/header.jpg' %}" class="img-fluid w-100" alt="Responsive image">
+    </div> -->
+    <div class="row">
+        {% for product in products %}
+
+        <div class="card mx-auto mt-5 " style="width: 18rem;">
+            <img src="{{ product.product_image.url }}" class="card-img-top" alt="..." style="height: 300px;">
+            <div class="card-body">
+                <h5 class="card-title">{{product.product_name}}</h5>
+                <h4>TK. {{product.product_price}}</h4>
+            </div>
+            <div class="card-footer text-center bg-transparent">
+                <a class="btn btn-primary" href="{% url 'productDetails' product.id %}" role="button">View
+                    Product</a>
+            </div>
+
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock main-content %}

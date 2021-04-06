@@ -1,0 +1,41 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock title %}
+{% block main-content %}
+
+<div class="container">
+    <div class="userdata w-50 mx-auto">
+        <h1 class="p-2 m-3 text-center text-white bg-primary rounded">User Profile</h1>
+
+        <div class="row mt-5">
+            <div class="col-md-4 text-center">
+                <img src="{% static 'mainapp/images/profileimg.jpg' %}" alt="" class="img-fluid img-thumbnail">
+            </div>
+            <div class="col-md-8">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>First Name</td>
+                            <td>{{user.first_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
+                            <td>{{user.last_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{user.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Username</td>
+                            <td>{{user}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock main-content %}

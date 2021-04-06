@@ -1,0 +1,46 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block title %}Signup{% endblock title %}
+{% block main-content %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <!-- message -->
+            <div class="msg my-3">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{message}}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+
+            <form action="" method="POST" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                {% for field in forms %}
+
+                <div class="form-group">
+                    {{field.label_tag}}
+                    {{field}}
+                    <small id="emailHelp" class="form-text text-danger">{{field.errors | striptags}} </small>
+                </div>
+                {% endfor %}
+
+                <!-- non field error code -->
+                {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                <p class="form-text text-danger">{{error}}</p>
+                {% endfor %}
+                {% endif %}
+                <button type="submit" class="btn btn-primary btn-block">Signup</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock main-content %}

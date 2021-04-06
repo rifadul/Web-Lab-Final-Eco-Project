@@ -1,0 +1,43 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block title %}Grocery{% endblock title %}
+{% block main-content %}
+
+<div class="container pt-5">
+    <div class="banner text-center">
+        <h1 class="p-2 m-3 text-center text-white bg-primary rounded">Product Details</h1>
+    </div>
+    <div class="row">
+
+        <div class="col-sm-6 text-center align-self-center">
+            <img src="{{ product.product_image.url }}" alt="" class="img-fluid img-thumbnail">
+        </div>
+        <div class="col-sm-5 offset-sm-1">
+            <h2 class="card-title">{{product.product_name}}</h2>
+            <p class="my-0"><small>Category : {{product.product_category}}</small></p>
+            <p class="my-0"><small>Product ID : {{product.product_id}}</small></p>
+            <hr>
+            <p class="my-0"><strong>Product Description: </strong>{{product.product_description}}</p> <br>
+            <p><strong>Price: </strong>Tk. {{product.product_price}}</p>
+            <p><strong>Product Seller: </strong>{{product.product_seller}}</p>
+            <p><strong>Availabel Quantity: </strong>{{product.product_available}}</p>
+
+            <a href="{% url 'home' %}" class="btn btn-primary shadow px-5 py-2">More Product</a>
+            <a href="" class="btn btn-success shadow px-5 py-2 ms-4">Buy Now</a>
+            <h4 class="mt-5">Available Offers</h4>
+            <ul>
+                <li>Bank Offer 5% Unlimited Cashback on Flipkart Axis Bank Credit</li>
+                <li>Special Price Get extra Tk. 3000 off (price inclusive of discount)</li>
+                <li>No cost EMI Tk.1,667/month. Standard EMI also available</li>
+                <li>Partner Offer Tk. 2000 Flipkart Gift Card on Every 1000th Transaction with a new Visa Debit/Credit
+                    Card
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+{% endblock main-content %}

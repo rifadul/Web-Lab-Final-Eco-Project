@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+     <!-- Required meta tags -->
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+     <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}" />
+
+     <title>SK SHOP | {% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+     <div class="container-fluid">
+          <div class="row">
+               <div class="col-md-2 sidebar px-0">
+                    <div class="profile-image text-center">
+                         <img src="{% static 'mainapp/images/shopping.jpg' %}" alt="logo"
+                              class="img-fluid rounded-circle mt-5" style="width: 200px; height: 200px" />
+                    </div>
+                    <div class="company text-center text-warning">
+                         <h3>Creative Shopping</h3>
+                    </div>
+                    <hr class="bg-white" />
+                    {% include 'mainapp/sitebar.html' %}
+               </div>
+               <div class="col-md-10">
+                    <div class="discount text-center w-50 mx-auto rounded">
+                         <p class="p-2 mt-1">
+                              Special offer upto 70% discount on Grocery
+                         </p>
+                    </div>
+
+                    {% block banner %} {% endblock banner %}
+                    {% block main-content %}
+                    {% endblock main-content %}
+               </div>
+          </div>
+     </div>
+     <!-- Start Footer -->
+     <footer class="container-fluid bg-dark text-center p-2">
+          <small class="text-white">Copyright &copy; 2021 || Designed By Rifadul Islam
+               Khushnobish Siam || ID: 181-15-1886 ||
+          </small>
+     </footer>
+     <!-- End Footer -->
+
+     <!-- <footer>
+          <div class="row">
+               <h1>skjdbvkj</h1>
+          </div>
+     </footer> -->
+
+     <!-- Optional JavaScript -->
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+</body>
+
+</html>
